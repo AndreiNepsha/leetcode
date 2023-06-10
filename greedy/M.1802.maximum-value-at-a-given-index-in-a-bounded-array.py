@@ -1,26 +1,23 @@
 class Solution:
     def maxValue(self, n: int, index: int, max_sum: int) -> int:
-        if max_sum == n:
-            return 1
-        li = n - 1
-        c_sum = n
-        peak = 1
-        dif = 1
-        l, r = index, index
-        while c_sum + dif <= max_sum:
-            if l == 0 and r == li:
-                return peak + (max_sum - c_sum) // dif
+        def count_sum(peak):
+            leftmost = max(peak - index, 0)
+            s = (peak + leftmost) * (peak - leftmost + 1) // 2
+            rightmost = max(peak - ((n-1) - index), 0)
+            s += (peak + rightmost) * (peak - rightmost + 1) // 2
+            return s - peak # peak counted twice
+        
+        max_sum -= n
+        left, right = 1, max_sum + 1
+
+        while left < right:
+            mid = (right - left) // 2 + left
+            if count_sum(mid) > max_sum:
+                right = mid
             else:
-                c_sum += dif
-                peak += 1
-                if l > 0:
-                    l -= 1
-                    dif += 1
-                if r < li:
-                    r += 1
-                    dif += 1
-        return peak
-            
+                left = mid + 1
+
+        return left
 
 
 n, index, max_sum = 4, 2, 6
