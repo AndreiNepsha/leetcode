@@ -1,3 +1,6 @@
+# TODO improve solution
+# https://leetcode.com/problems/snapshot-array/solutions/
+
 class SnapshotArray:
     def __init__(self, length: int):
         self.snaps = [dict()]
