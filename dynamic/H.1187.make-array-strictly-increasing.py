@@ -1,4 +1,5 @@
 # TODO improve solution
+# https://leetcode.com/problems/make-array-strictly-increasing/editorial/
 
 from collections import Counter
 

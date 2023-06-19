@@ -1,4 +1,6 @@
 # TODO improve solution
+# https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/solutions/3643477/dp-recursion-using-python-layman-s-code/
+# https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/solutions/3643494/python-easy-fast-solution/
 
 from math import comb
 
