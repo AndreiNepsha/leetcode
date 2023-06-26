@@ -8,9 +8,7 @@ class Solution:
         while left <= right:
             mid = left + (right - left) // 2
             i = mid // n
-            j = mid - (i * n)
-            if j > n:
-                i, j = i + 1, 0
+            j = mid % n
             if matrix[i][j] < target:
                 left = mid + 1
             elif matrix[i][j] > target:
